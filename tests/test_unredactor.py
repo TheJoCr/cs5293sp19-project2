@@ -5,11 +5,11 @@ import tempfile
 test_dict = {
     'great': 0,
     'really': 1,
-    'some': 2,
+    'awesome': 2,
     'text': 3,
 }
 def test_bag_of_words():
-    test_str = "Some Really great text with text in it twice"
+    test_str = "Some Really great awesome text with text in it twice"
     words = un.bag_of_words(test_str, test_dict)
     assert len(words) == 4
     assert words[test_dict['text']] == 2
@@ -18,8 +18,8 @@ def test_bag_of_words():
 dict_file_contents = \
 '''great
 really
-some
-text '''
+awesome
+text'''
 
 def test_get_dictionary():
     with tempfile.SpooledTemporaryFile(mode='rw') as dict_file:
